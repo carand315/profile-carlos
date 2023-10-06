@@ -39,7 +39,7 @@
             ],
             "scripts": [
               "./node_modules/aos/dist/aos.js",
-              "./node_modules/chart.js/dist/chart.min.js"
+              "./node_modules/chart.js/dist/Chart.min.js"
             ],
             "allowedCommonJsDependencies": [
               "ng2-charts"
