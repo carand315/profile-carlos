@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { initialState, selectStocks, updateCOPRate, updateUSDRate } from './store';
 import { TranslateService } from '@ngx-translate/core';
 import * as AOS from 'aos'
-import { ChartData } from 'chart.js';
+import { ChartData, ChartDataSets } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
@@ -22,8 +22,9 @@ export class AppComponent implements OnInit {
   googleStock = 0;
   microsoftStock = 0;
 
-  barChartData: ChartData;
-  pieChartData: ChartData;
+  barChartData;
+  pieChartData;
+  pieChartDataLabels = ['Angular' , 'React', 'Vue', 'Svelte']
   pieChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -63,19 +64,12 @@ export class AppComponent implements OnInit {
   }
 
   configCharts(){
-    this.barChartData = {
-      labels: [''],
-      datasets: this.barChartRandomData()
-    };
-
-    this.pieChartData = {
-      labels: ['JavaScript', 'C#', 'Java', 'Phyton'],
-      datasets: this.pieChartRandomData()
-    };
+    this.barChartData = this.barChartRandomData()
+    this.pieChartData = this.pieChartRandomData()
 
     setInterval(() => {
-      this.barChartData.datasets = this.barChartRandomData()
-      this.pieChartData.datasets = this.pieChartRandomData()
+      this.barChartData = this.barChartRandomData()
+      this.pieChartData = this.pieChartRandomData()
       this.charts.forEach(chart => chart.update());
     }, 4000)
 
@@ -93,8 +87,7 @@ export class AppComponent implements OnInit {
   }
 
   pieChartRandomData() : any {
-    return [
-          { data: [ Math.round(Math.random() * 1000), Math.round(Math.random() * 1000), Math.round(Math.random() * 1000), Math.round(Math.random() * 1000)] }
-        ]
+    return [ Math.round(Math.random() * 1000), Math.round(Math.random() * 1000), Math.round(Math.random() * 1000), Math.round(Math.random() * 1000)]
+
   }
 }

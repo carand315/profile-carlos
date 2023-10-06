@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { NgChartsModule } from 'ng2-charts';
+import { ChartsModule  } from 'ng2-charts';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
@@ -38,7 +38,7 @@ import { currencyReducer } from './store';
           deps: [HttpClient]
       }
     }),
-    NgChartsModule,
+    ChartsModule,
     MatCardModule,
     MatCarouselModule,
     MatSelectModule,

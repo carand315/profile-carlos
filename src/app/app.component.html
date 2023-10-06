@@ -299,20 +299,20 @@
               <div class="col-xs-6">
                 <canvas
                   baseChart
+                  [datasets]="barChartData"
+                  [chartType]="'bar'"
                   class="chart"
-                  [data]="barChartData"
-                  [type]="'bar'"
+
                 >
                 </canvas>
               </div>
               <div class="col-xs-6">
                 <canvas
-
                   baseChart
                   class="chart"
+                  [chartType]="'pie'"
                   [data]="pieChartData"
-                  [options]="pieChartOptions"
-                  [type]="'pie'"
+                  [labels]="pieChartDataLabels"
                 >
                 </canvas>
               </div>
@@ -328,7 +328,3 @@
 
 
 </div>
-
-
-
-
