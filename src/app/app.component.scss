@@ -1,0 +1,77 @@
+@media only screen and (min-width: 75em) {
+  .container {
+    width: 75%;
+  }
+}
+
+.d-flex {
+  display: flex;
+  flex: 0 1 auto;
+}
+
+
+img.photo {
+  height: 150px;
+  width: 150px;
+  margin: 0 auto 1.5rem;
+  display: block;
+}
+
+.icon-1 {
+  height: 64px;
+  width: 64px;
+}
+
+.icon-translate {
+  width: 250px;
+}
+
+.gap-1{
+  gap: 1rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 1.5rem;
+}
+
+.mt-3 {
+  margin-top: 2rem;
+}
+
+.mt-5 {
+  margin-top: 4rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.pt-1{
+  padding-top: 1.5rem;
+}
+
+.pt-3{
+  padding-top: 3rem;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.strong{
+  font-weight: bold
+}
+
+.material-symbols-outlined {
+  font-size: 50px;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 100,
+  'GRAD' 500,
+  'opsz' 48
+}
+
