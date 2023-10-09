@@ -225,10 +225,24 @@
     <div data-aos="fade-down" class="row mt-1">
       <div class="col-xs-12 col-md-8">
         <mat-card  [style.height.px]="250">
-          <mat-card-content  [style.padding.rem]="3">
-            <div class="row bottom-xs gap-1 mb-2">
-              <img class="icon-1" src="assets/ngrx.svg">
-              <h1>Redux</h1>
+          <mat-card-content  [style.padding.rem]="1">
+            <div class="row beetween-xs bottom-xs gap-1 mb-1">
+              <div class="col-xs">
+                <img class="icon-1" src="assets/ngrx.svg">
+                <h1>Redux</h1>
+              </div>
+
+              <div class="col-xs">
+                <label class="mr-1">Currency</label>
+                <mat-form-field appearance="outline">
+                  <mat-select (selectionChange)="onCurrencyChange($event)" [(value)]="selectedCurrency">
+                    <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+                      {{currency.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
             </div>
 
             <div class="row">
@@ -244,16 +258,7 @@
                 <h2>Microsoft</h2>
                 <h1 class="strong"> {{ microsoftStock | currency}} </h1>
               </div>
-              <div class="col-xs">
-                <label>Currency</label>
-                <mat-form-field appearance="outline">
-                  <mat-select (selectionChange)="onCurrencyChange($event)" [(value)]="selectedCurrency">
-                    <mat-option *ngFor="let currency of currencies" [value]="currency.value">
-                      {{currency.viewValue}}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
+
             </div>
 
           </mat-card-content>
@@ -263,7 +268,7 @@
 
       <div class="col-xs-12 col-md-4">
         <mat-card [style.height.px]="250">
-          <mat-card-content [style.padding.rem]="3">
+          <mat-card-content [style.padding.rem]="1">
             <div class="row bottom-xs gap-1 mb-2">
               <img class="icon-translate" src="assets/translate.png">
             </div>
